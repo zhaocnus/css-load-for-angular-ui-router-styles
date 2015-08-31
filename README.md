@@ -2,6 +2,8 @@
 
 An Angular Service to detect CSS load for [angular-ui-router-styles](https://github.com/manuelmazzuola/angular-ui-router-styles)
 
+Inspired by [this post](https://medium.com/opinionated-angularjs/angular-dynamically-injecting-css-file-using-route-resolve-and-promises-7bfcb8ccd05b)
+
 ## Usage
 - In controller. This is not a common usage because normally you don't want to put logic related to CSS styles in a controller.
 
