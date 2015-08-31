@@ -6,10 +6,7 @@ An Angular Service to detect CSS load for [angular-ui-router-styles](https://git
 - In controller. This is not a common usage because normally you don't want to put logic related to CSS styles in a controller.
 
 ```javascript
-  angular.module('foo', [
-    'uiRouterStyles',
-    'common.services.checkCssLoaded'
-  ])
+  angular.module('foo', ['uiRouterStyles', 'common.services.checkCssLoaded'])
     .config([
       '$stateProvider',
       function ($stateProvider) {
@@ -30,7 +27,7 @@ An Angular Service to detect CSS load for [angular-ui-router-styles](https://git
       function ($scope, $state, checkCssLoaded) {
         $scope.css = $state.current.data.css;
 
-        checkCssLoaded.then(function () {
+        checkCssLoaded.check($scope.css).then(function () {
           // 'style-1.css' and 'style-2.css' are loaded
           // do stuff here
         });
@@ -48,7 +45,8 @@ An Angular Service to detect CSS load for [angular-ui-router-styles](https://git
         return {
           ...,
           link: function (scope, element, attr) {
-            checkCssLoaded.then(function () {
+            // assume scope.css is already defined in controller
+            checkCssLoaded.check(scope.css).then(function () {
               // 'style-1.css' and 'style-2.css' are loaded
               // do stuff here
             });
