@@ -5,7 +5,7 @@ An Angular Service to detect CSS load for [angular-ui-router-styles](https://git
 ## Usage
 - In controller. This is not a common usage because normally you don't want to put logic related to CSS styles in a controller.
 
-```
+```javascript
   angular.module('foo', [
     'uiRouterStyles',
     'common.services.checkCssLoaded'
@@ -40,7 +40,7 @@ An Angular Service to detect CSS load for [angular-ui-router-styles](https://git
 
 - In a directive. This is a more common usage.
 
-```
+```javascript
   angular.module('foo')
     .directive('aiBeforeAfter', [
       'checkCssLoaded',
