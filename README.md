@@ -37,6 +37,8 @@ Inspired by [this post](https://medium.com/opinionated-angularjs/angular-dynamic
     ]);
 ```
 
+IMPORTANT: You can't use this service in a controller's `resolve` field. If you do it that way the CSS load will never get resolved. 
+
 - In a directive. This is a more common usage.
 
 ```javascript
